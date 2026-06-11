@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>La Bomba Ezkyza 💣</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="contenedor-juego">
+    <h1>⏱️ La Bomba Ezkyza 💣</h1>
+    
+    <canvas id="lienzoJuego" width="600" height="400"></canvas>
+    
+    <div class="controles-cel">
+      <div class="fila">
+        <button class="btn-tactil" id="btn-arriba">🔼</button>
+      </div>
+      <div class="fila">
+        <button class="btn-tactil" id="btn-izquierda">◀️</button>
+        <button class="btn-tactil" id="btn-abajo">🔽</button>
+        <button class="btn-tactil" id="btn-derecha">▶️</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+
+  <script type="module">
+    // 1. Importamos la base de Firebase y la Pizarra Mágica (Database)
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+    import { getDatabase, ref, set, onValue, update, onDisconnect } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
+
+    // 2. Tus claves secretas de la Bomba Ezkyza
+    const firebaseConfig = {
+      apiKey: "AIzaSyC_fb7h7XNzpPvz10yzgljsPM5sWWw5a1Y",
+      authDomain: "bomba-ezkyza.firebaseapp.com",
+      projectId: "bomba-ezkyza",
+      storageBucket: "bomba-ezkyza.firebasestorage.app",
+      messagingSenderId: "493482144210",
+      appId: "1:493482144210:web:8244b52b489cde1bb5d80b"
+    };
+
+    // 3. Inicializamos la conexión
+    const app = initializeApp(firebaseConfig);
+    const db = getDatabase(app);
+
+    console.log("¡Bunker conectado con éxito a la nube de Firebase! 🚀");
+  </script>
+
+</body>
+</html>
